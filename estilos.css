@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #4a90e2;
+    color: white;
+    padding: 0.09px;
+    text-align: center;
+}
+
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.buttons {
+    text-align: left;
+    justify-content: space-between;
+}
+
+button {
+    text-align: left;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+}
+
+#cancela{
+          padding: 10px 20px;
+          background-color: #e21313;  /* Color de fondo del botón */
+          color: white;
+          font-size: small;
+          text-decoration: none;       /* Quita el subrayado del enlace */
+          border-radius: 4px;          /* Bordes redondeados */
+          transition: background-color 0.3s ease; /* Efecto de transición */
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operaciones - Registro Película</title>
+    <link rel="stylesheet" href="styleF.css">
+  </head>
+  <body>
+    <div id="container">
+      <h1>Crear Función</h1>
+
+      <div id="input-container">
+        <form action="ControlSala" method="post">
+          
+          <label for="idsala">Numero de sala:</label>
+          <input type="number" id="idsala" name="idsala" placeholder="Numero de la sala" required>
+
+          <label for="tipo">Tipo de sala:</label>
+          <input type="text" id="tipo" name="tipo" placeholder="Tipo de sala" required>
+          
+
+          <label for="capacidad">Capacidad:</label>
+          <input type="number" id="capacidad" name="capacidad" placeholder="Ingrese la capacidad de la sala" required>
+
+          <label for="condicion">Precio:</label>
+          <input type="text" id="condicion" name="condicion" placeholder="Condiciones" required>
+
+          <button id="add-btn" type="submit">Guardar</button>
+        </form>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Numero de sala</th>
+            <th>Tipo de salas</th>
+            <th>Capacidad</th>
+            <th>Condiciones</th>
+          </tr>
+        </thead>
+       <tbody id="table-body">
+          <%
+            List<Funcion> funciones = (List<Funcion>) request.getAttribute("funciones");
+            if (funciones != null) {
+                for (Funcion funcion : funciones) { 
+          %>
+                <tr>
+                  <td><%= funcion.getPelicula().getTitulo() %></td>
+                  <td><%= funcion.getSala().getTipo() %></td>
+                  <td><%= funcion.getFechaHora() %></td>
+                  <td><%= funcion.getPrecioEntrada() %></td>
+                  <td>
+                    <button>Editar</button> 
+                    <button>Eliminar</button>
+                  </td>
+                </tr>
+          <% 
+                }
+            } else { 
+          %>
+                <tr>
+                  <td colspan="6">No hay funciones registradas</td>
+                </tr>
+          <% 
+            } 
+          %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
